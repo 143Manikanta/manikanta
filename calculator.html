@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+            td,button{
+                width:30px;
+                height:30px;
+                
+                background-color: dimgray;
+            }
+            input{
+                width: 130px;
+            }
+        </style>
+        <script>
+            function button(a){
+                document.getElementById("input").value+=a;
+                
+            }
+            function result(){
+                 var n=document.getElementById("input").value;
+                 var m=eval(n);
+                 document.getElementById("input").value=m;
+            }
+            function C(){
+                document.getElementById("input").value=" ";
+            }
+        </script>
+           <table align="center">
+            <tr>
+                <td><button id="ac" onclick="C()">c</button></td>
+                <td><button></button></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button onclick=button(1) id="1">1</button>
+                </td>
+                <td><button onclick=button(2)>2</button></td>
+                <td><button onclick=button(3)>3</button></td>
+                <td><button onclick=button("+")>+</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick=button(4)>4</button>
+                </td>
+                <td><button onclick=button(5)>5</button>
+                </td>
+                <td><button onclick=button(6)>6</button></td>
+                <td><button onclick=button("-")>-</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick=button(7)>7</button>
+                </td>
+                <td><button onclick=button(8)>8</button></td>
+                <td><button onclick=button(9)>9</button></td>
+                <td><button onclick="result()" id="result">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="4"><input type="text" id="input"></td>
+            </tr>
+        </table>
+    </body>
+</html>
