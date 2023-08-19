@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+            body{
+              
+                background-color:rgb(158, 15, 15);
+            }
+            span{
+                
+                display: block;
+                padding: 20px;
+                background-color: pink;
+            }
+            div{
+                width:max-content;
+                
+                padding: 20px;
+                background-color: yellow;
+            }
+            button{
+                width:50px;
+                height:50px;
+                background-color: violet;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <span>
+                <button>click me</button>
+            </span>
+        </div>
+        <script>
+            const body=document.getElementsByTagName("body")[0];
+            const div=document.getElementsByTagName("div")[0];
+            const span=document.getElementsByTagName("span")[0];
+            const but=document.getElementsByTagName("button")[0];
+            body.addEventListener('click',()=>{
+                console.log("body was clicked")
+            });
+            but.addEventListener('click',()=>{
+                console.log("button was clicked")
+            });
+            div.addEventListener('click',()=>{
+                console.log("div was clicked")
+            });
+            span.addEventListener('click',()=>{
+                console.log("span was clicked")
+            });
+        </script>
+    </body>
+</html>
