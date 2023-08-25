@@ -1,0 +1,37 @@
+import React, { useState } from "react";
+
+const countries = [
+  { name: 'india', value: 'IN', cities: ['delhi', 'mumbai'] },
+  { name: 'pak', value: 'pk', cities: ['lahore', 'karachi'] },
+  { name: 'bangladesh', value: 'bg', cities: ['dhaka', 'chittagong'] },
+];
+
+export default function App() {
+  const [selectedCountry, setSelectedCountry] = useState(countries[0].value);
+  
+  const handleCountryChange = (e) => {
+    setSelectedCountry(e.target.value);
+  };
+
+  const selectedCountryObj = countries.find(country => country.value === selectedCountry);
+  
+  return (
+    <div className="App">
+      <select value={selectedCountry} onChange={handleCountryChange}>
+        {countries.map((item, index) => (
+          <option key={index} value={item.value}>
+            {item.name}
+          </option>
+        ))}
+      </select>
+
+      <select>
+        {selectedCountryObj.cities.map((item, index) => (
+          <option key={index} value={item}>
+            {item}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
